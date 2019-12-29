@@ -1,0 +1,24 @@
+<div class="col-sm-12 p-0">
+  <table class="table table-bordered table-dark table-responsive">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">User Id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col" *ngFor="let address of users[0].addresses; let j = index">Address-{{j+1}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index">
+        <td scope="col">{{ i + 1 }}</td>
+        <td scope="col">{{ user.userId }}</td>
+        <td scope="col">{{ user.firstName }}</td>
+        <td scope="col">{{ user.lastName }}</td>
+        <td scope="col">{{ user.email }}</td>
+          <td scope="col" *ngFor="let address of user.addresses; let j = index"> {{ address.city }} - {{ address.country }}</td>
+      </tr>
+    </tbody> 
+  </table>
+</div>
